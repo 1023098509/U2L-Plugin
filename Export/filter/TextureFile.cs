@@ -69,11 +69,16 @@ internal class TextureFile : FileData
         }
         else
         {
-            import.textureType = TextureImporterType.Default;
+            //import.textureType = TextureImporterType.Default;
             import.isReadable = true;
             AssetDatabase.ImportAsset(path);
         }
         JSONObject importData = new JSONObject(JSONObject.Type.OBJECT);
+
+        if(import.textureType == TextureImporterType.Lightmap)
+        {
+            importData.AddField("textureType", 1);
+        }
         if (this._isNormal || import.textureType == TextureImporterType.NormalMap)
         {
             importData.AddField("sRGB", false);
@@ -85,18 +90,18 @@ internal class TextureFile : FileData
         if (this._format == 3)
         {
             importData.AddField("npot", 1);
-            JSONObject platformPC = new JSONObject(JSONObject.Type.OBJECT);
-            platformPC.AddField("format", "BC1");
-            platformPC.AddField("quality", 2);
-            importData.AddField("platformPC", platformPC);
+            //JSONObject platformPC = new JSONObject(JSONObject.Type.OBJECT);
+            //platformPC.AddField("format", "BC1");
+            //platformPC.AddField("quality", 2);
+            //importData.AddField("platformPC", platformPC);
         }
         else
         {
             importData.AddField("npot", 1);
-            JSONObject platformPC = new JSONObject(JSONObject.Type.OBJECT);
-            platformPC.AddField("format", "BC3");
-            platformPC.AddField("quality", 2);
-            importData.AddField("platformPC", platformPC);
+            //JSONObject platformPC = new JSONObject(JSONObject.Type.OBJECT);
+            //platformPC.AddField("format", "BC3");
+            //platformPC.AddField("quality", 2);
+            //importData.AddField("platformPC", platformPC);
         }
         /* if (import.generateMipsInLinearSpace)
          {*/
@@ -115,6 +120,22 @@ internal class TextureFile : FileData
         {
             importData.AddField("alphaChannel", true);
         }
+
+        if (texture.wrapMode == TextureWrapMode.Repeat)
+        {
+            importData.AddField("wrapMode", 0);
+        }
+        else if (texture.wrapMode == TextureWrapMode.Clamp)
+        {
+            importData.AddField("wrapMode", 1);
+        }
+        else
+        {
+            importData.AddField("wrapMode", 2);
+        }
+
+
+
         this.m_metaData.AddField("importer", importData);
         this._constructParams.Add(texture.width);
         this._constructParams.Add(texture.height);

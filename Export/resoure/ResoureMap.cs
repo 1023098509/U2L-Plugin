@@ -187,6 +187,14 @@ internal class ResoureMap
         {
             compents.Add(this.GetLodGroup(comp as LODGroup, map, isOverride));
         }
+        else if (comp is LightmapContainer)
+        {
+            compents.Add(this.GetLightmapContainer(comp as LightmapContainer,  isOverride));
+        }
+        else if (comp is LightmapInfo)
+        {
+            compents.Add(this.GetLightmapInfo(comp as LightmapInfo, isOverride));
+        }
     }
 
     public JSONObject GetLightComponentData(Light light,bool isOverride)
@@ -590,4 +598,48 @@ internal class ResoureMap
         }
         return materFiledata;
     }
+
+    public JSONObject GetTextureData(Texture texture, bool isNormal)
+    {
+        JSONObject materFiledata = new JSONObject(JSONObject.Type.OBJECT);
+        materFiledata.AddField("_$type", "Texture2D");
+        if (texture != null)
+        {
+            TextureFile jsonFile = this.GetTextureFile(texture,isNormal);
+            materFiledata.AddField("_$uuid", jsonFile.uuid);
+        }
+        return materFiledata;
+    }
+
+    public JSONObject GetLightmapContainer(LightmapContainer test, bool isOverride)
+    {
+        JSONObject testNode = new JSONObject(JSONObject.Type.OBJECT);
+        testNode.AddField("_$type", "c5968b3d-2d31-440e-bab2-4abb8b95ef5b");
+        testNode.AddField("scriptPath", "LightmapArray.ts");
+
+        JSONObject texColorArrayNode = new JSONObject(JSONObject.Type.ARRAY);
+
+        List<Texture> texColorArray = test.lightmapColorTextures;
+        for (var i = 0; i < texColorArray.Count; i++)
+        {
+            texColorArrayNode.Add(this.GetTextureData(texColorArray[i],false));
+        }
+
+        testNode.AddField("texColorArray", texColorArrayNode);
+
+        return testNode;
+    }
+
+    public JSONObject GetLightmapInfo(LightmapInfo test, bool isOverride)
+    {
+        JSONObject testNode = new JSONObject(JSONObject.Type.OBJECT);
+        testNode.AddField("_$type", "6e819a74-30de-4d8a-83bf-d659b9df92b9");
+        testNode.AddField("scriptPath", "LightmapInfo.ts");
+
+        testNode.AddField("index", test.index);
+        testNode.AddField("offset", JsonUtils.GetVector4Object(test.offset));
+
+        return testNode;
+    }
+
 }

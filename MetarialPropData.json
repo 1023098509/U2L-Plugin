@@ -570,5 +570,245 @@
                 "layaName": "u_AlbedoColor"
             }
         ]
+    },
+    "Unlit/YxxShader": {
+        "targeName": "YxxShader",
+        "textures": [
+            {
+                "uName": "u_T_Texture2D",
+                "layaName": "u_T_Texture2D"
+            },
+            {
+                "uName": "u_T_TexCube",
+                "layaName": "u_T_TexCube"
+            }
+
+        ],
+        "colors": [
+            {
+                "uName": "u_T_Color",
+                "layaName": "u_T_Color"
+            }
+        ],
+        "tillOffset": [
+            {
+                "uName": "u_T_V2",
+                "layaName": "u_T_V2"
+            }
+        ],
+        "floats": [
+            {
+                "uName": "u_T_Float",
+                "layaName": "u_T_Float"
+            }
+        ],
+        "defineds": [
+            {
+                "uName": "u_T_Bool",
+                "layaName": "u_T_Bool",
+                "from": 0,
+                "deflat": 1.0
+            }
+        ]
+    },
+    "Unlit/testtt": {
+        "targeName": "TempShader",
+        "textures": [
+            
+
+        ],
+        "colors": [
+            
+        ],
+        "tillOffset": [
+           
+        ],
+        "floats": [
+           
+        ],
+        "defineds": [
+           
+        ]
+    },
+    "TADemo/L-Library/SRP Batcher/L-Lit": {
+        "targeName": "L-Lit",
+        "colors": [
+            {
+                "uName": "_BaseColor",
+                "layaName": "_BaseColor"
+            },
+            {
+                "uName": "_EmissionColor",
+                "layaName": "_EmissionColor"
+            },
+            {
+                "uName": "_TransmissionTint",
+                "layaName": "_TransmissionTint"
+            }
+        ],
+        "textures": [
+            {
+                "uName": "_BaseMap",
+                "layaName": "_BaseMap"
+            },
+            {
+                "uName": "_NormalAG_MetalR_SmoothB_Map",
+                "layaName": "_NormalAG_MetalR_SmoothB_Map",
+                "defind": "_NORMAL_METAL_SMOOTH"
+            },
+            {
+                "uName": "_EmissionMap",
+                "layaName": "_EmissionMap",
+                "defind": "_EMISSION"
+            },
+            {
+                "uName": "_AlphaMap",
+                "layaName": "_AlphaMap",
+                "defind": "_ALPHAMAP"
+            }
+        ],
+        "floats": [
+            {
+                "uName": "_Occlusion",
+                "layaName": "_Occlusion"
+            },
+            {
+                "uName": "_Metallic",
+                "layaName": "_Metallic"
+            },
+            {
+                "uName": "_Smoothness",
+                "layaName": "_Smoothness"
+            },
+            {
+                "uName": "_NormalIntensity",
+                "layaName": "_NormalIntensity"
+            },
+            {
+                "uName": "_Cutoff",
+                "layaName": "_Cutoff"
+            },
+            {
+                "uName": "_IndirectDiffuseLightingMultiplier",
+                "layaName": "_IndirectDiffuseLightingMultiplier"
+            },
+            {
+                "uName": "_IndirectSpecularLightingMultiplier",
+                "layaName": "_IndirectSpecularLightingMultiplier"
+            },
+            {
+                "uName": "_Thickness",
+                "layaName": "_Thickness"
+            }
+        ],
+        "tillOffset": [
+            {
+                "uName": "_BaseMap_ST",
+                "layaName": "_BaseMap_ST"
+            }
+        ],
+        "defineds": [
+            {
+                "uName": "_TRANSMISSION",
+                "layaName": "_TRANSMISSION",
+                "from": 1,
+                "deflat": 0.0
+            },
+            {
+                "uName": "_USE_DIRECT_DIFFUSE_LAMBERT",
+                "layaName": "_USE_DIRECT_DIFFUSE_LAMBERT",
+                "from": 1,
+                "deflat": 1.0
+            },
+            {
+                "uName": "_USE_DIRECT_SPECULAR_BLINNPHONG",
+                "layaName": "_USE_DIRECT_SPECULAR_BLINNPHONG",
+                "from": 1,
+                "deflat": 0.0
+            },
+            {
+                "uName": "_USE_INDIRECT_FACTER",
+                "layaName": "_USE_INDIRECT_FACTER",
+                "from": 1,
+                "deflat": 1.0
+            },
+            {
+                "uName": "_VERTEX_SH",
+                "layaName": "_VERTEX_SH",
+                "from": 1,
+                "deflat": 0.0
+            },
+            {
+                "uName": "_SPECULARHIGHLIGHTS_OFF",
+                "layaName": "_SPECULARHIGHLIGHTS_OFF",
+                "from": 1,
+                "deflat": 0.0
+            },
+            {
+                "uName": "_ENVIRONMENTDIFFUSE_OFF",
+                "layaName": "_ENVIRONMENTDIFFUSE_OFF",
+                "from": 1,
+                "deflat": 0.0
+            },
+            {
+                "uName": "_ENVIRONMENTREFLECTIONS_OFF",
+                "layaName": "_ENVIRONMENTREFLECTIONS_OFF",
+                "from": 1,
+                "deflat": 0.0
+            },
+            {
+                "uName": "_SPECULARHIGHLIGHTS_ADDITIONAL_OFF",
+                "layaName": "_SPECULARHIGHLIGHTS_ADDITIONAL_OFF",
+                "from": 1,
+                "deflat": 1.0
+            },
+            {
+                "uName": "_ADDITIONAL_LIGHTS",
+                "layaName": "_ADDITIONAL_LIGHTS",
+                "from": 1,
+                "deflat": 1.0
+            },
+            {
+                "uName": "_MIXED_LIGHTING_SUBTRACTIVE",
+                "layaName": "_MIXED_LIGHTING_SUBTRACTIVE",
+                "from": 1,
+                "deflat": 0.0
+            }
+        ]
+    },
+    "TADemo/L-Library/SRP Batcher/L-Unlit": {
+        "targeName": "L-Unlit",
+        "colors": [
+            {
+                "uName": "_BaseColor",
+                "layaName": "_BaseColor"
+            }
+        ],
+        "textures": [
+            {
+                "uName": "_BaseMap",
+                "layaName": "_BaseMap"
+            }
+        ],
+        "floats": [
+            {
+                "uName": "_Cutoff",
+                "layaName": "_Cutoff"
+            }
+        ],
+        "tillOffset": [
+            {
+                "uName": "_BaseMap_ST",
+                "layaName": "_BaseMap_ST"
+            }
+        ],
+        "defineds": [
+            {
+                "uName": "_ALPHATEST_ON",
+                "layaName": "ALPHATEST",
+                "from": 1,
+                "deflat": 0.0
+            }
+        ]
     }
 }
