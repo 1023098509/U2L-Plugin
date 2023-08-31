@@ -24,17 +24,6 @@ internal class JsonUtils
         return postionData;
     }
 
-    public static JSONObject GetVector4Object(Vector4 value)
-    {
-        JSONObject postionData = new JSONObject(JSONObject.Type.OBJECT);
-        postionData.AddField("_$type", "Vector4");
-        postionData.AddField("x", value.x);
-        postionData.AddField("y", value.y);
-        postionData.AddField("z", value.z);
-        postionData.AddField("w", value.w);
-        return postionData;
-    }
-
     public static JSONObject GetQuaternionObject(Quaternion quaternion)
     {
         JSONObject postionData = new JSONObject(JSONObject.Type.OBJECT);
